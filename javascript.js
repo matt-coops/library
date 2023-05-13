@@ -74,7 +74,7 @@ const closeForm = function () {
   fieldTitle.value = "";
   fieldAuthor.value = "";
   fieldPages.value = "";
-  if (checkboxRead.checked === true) checkboxRead.checked = false;
+  checkboxRead.checked = false;
   overlayForm.classList.add("hidden");
 };
 
