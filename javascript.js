@@ -30,9 +30,9 @@ function addBookToLibrary() {
     const html = `
   <div class="book" data-index="${index}">
   <div class="delete-book">X</div>
-  <span class="book-title">Title: ${book.title}</span><br />
-  <span class="book-author">Author: ${book.author}</span><br />
-  <span class="book-pages">Pages: ${book.pages}</span><br />
+  <span class="book-title">"${book.title}"</span><br />
+  <span class="book-author">by ${book.author}</span><br />
+  <span class="book-pages">${book.pages} pages</span><br />
   <div class="completed">
     <span class="book-read">Completed: </span>
     <input type="checkbox" class="book-read-checkbox" ${
