@@ -3,7 +3,7 @@
 let myLibrary = [];
 
 const containerBooks = document.querySelector("#book-container");
-const overlayForm = document.querySelector("#form");
+const overlayForm = document.querySelector("#new-book-form");
 const btnNewBook = document.querySelector("#new-book-btn");
 const btnOverlaySubmit = document.querySelector("#submit-form");
 const btnOverlayClose = document.querySelector("#close-form");
@@ -45,11 +45,6 @@ class Book {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function () {
-      return `${this.title} by ${this.author}, ${this.pages} pages, ${
-        this.read === true ? "has been read" : "not read yet"
-      }`;
-    };
   }
 }
 
