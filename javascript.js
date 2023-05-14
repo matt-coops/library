@@ -24,6 +24,13 @@ function Book(title, author, pages, read) {
   };
 }
 
+function resetForm() {
+  fieldTitle.value = "";
+  fieldAuthor.value = "";
+  fieldPages.value = "";
+  checkboxRead.checked = false;
+}
+
 function addBookToLibrary() {
   containerBooks.innerHTML = "";
   for (const [index, book] of myLibrary.entries()) {
@@ -59,10 +66,7 @@ btnOverlaySubmit.addEventListener("click", function () {
       checkboxRead.checked
     )
   );
-  fieldTitle.value = "";
-  fieldAuthor.value = "";
-  fieldPages.value = "";
-  if (checkboxRead.checked === true) checkboxRead.checked = false;
+  resetForm();
   addBookToLibrary();
 });
 
@@ -71,10 +75,7 @@ btnOverlayClose.addEventListener("click", function () {
 });
 
 const closeForm = function () {
-  fieldTitle.value = "";
-  fieldAuthor.value = "";
-  fieldPages.value = "";
-  checkboxRead.checked = false;
+  resetForm();
   overlayForm.classList.add("hidden");
 };
 
