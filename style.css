@@ -1,5 +1,6 @@
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 #btn-container {
@@ -22,7 +23,7 @@ body {
 }
 
 #new-book-btn:active {
-  border: solid 0px black;
+  transform: scale(0.98);
 }
 
 #new-book-form {
@@ -59,13 +60,19 @@ body {
 }
 
 #submit-form {
+  display: flex;
+  align-items: center;
   background-color: grey;
   color: white;
-  padding: 10px;
-  border: solid 1px black;
   width: fit-content;
+  padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 15px;
+}
+
+#submit-form:active {
+  transform: scale(0.98);
 }
 
 #book-container {
