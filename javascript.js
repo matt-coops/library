@@ -58,6 +58,7 @@ function resetForm() {
   fieldAuthor.value = "";
   fieldPages.value = "";
   checkboxRead.checked = false;
+  fieldTitle.focus();
 }
 
 function addBookToLibrary(e) {
