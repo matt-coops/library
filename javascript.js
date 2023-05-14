@@ -18,7 +18,7 @@ btnNewBook.addEventListener("click", function (e) {
 
 btnOverlaySubmit.addEventListener("click", addBookToLibrary);
 
-btnOverlayClose.addEventListener("click", closeForm());
+btnOverlayClose.addEventListener("click", closeForm);
 
 containerBooks.addEventListener("click", function (e) {
   if (
@@ -48,6 +48,11 @@ class Book {
   }
 }
 
+function closeForm() {
+  resetForm();
+  overlayForm.classList.add("hidden");
+}
+
 function resetForm() {
   fieldTitle.value = "";
   fieldAuthor.value = "";
@@ -55,7 +60,9 @@ function resetForm() {
   checkboxRead.checked = false;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(e) {
+  e.preventDefault();
+  if (!fieldTitle.value || !fieldAuthor.value || !fieldPages.value) return;
   myLibrary.push(
     new Book(
       fieldTitle.value,
@@ -73,7 +80,7 @@ function renderBook() {
   for (const [index, book] of myLibrary.entries()) {
     const html = `
   <div class="book" data-index="${index}">
-  <div class="delete-book">X</div>
+  <div class="delete-book">&times</div>
   <span class="book-title">"${book.title}"</span><br />
   <span class="book-author">by ${book.author}</span><br />
   <span class="book-pages">${book.pages} pages</span><br />
@@ -88,9 +95,4 @@ function renderBook() {
 
     containerBooks.insertAdjacentHTML("beforeend", html);
   }
-}
-
-function closeForm() {
-  resetForm();
-  overlayForm.classList.add("hidden");
 }

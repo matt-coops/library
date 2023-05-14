@@ -12,18 +12,16 @@
       <button id="new-book-btn">New Book</button>
     </div>
     <form id="new-book-form" class="hidden">
+      <span id="close-form">&times</span>
       <label for="title">Title:</label>
       <input type="text" id="title" name="title" /><br />
       <label for="author">Author:</label>
       <input type="text" id="author" name="author" /><br />
       <label for="pages">Pages:</label>
-      <input type="text" id="pages" name="pages" /><br />
+      <input type="number" id="pages" name="pages" /><br />
       <label for="read">Read?</label>
       <input type="checkbox" id="read" name="read" /><br />
-      <div id="form-buttons">
-        <div id="submit-form">Submit</div>
-        <div id="close-form">Close</div>
-      </div>
+      <input type="submit" id="submit-form"></input>
     </form>
     <div id="book-container"></div>
     <script src="javascript.js"></script>
